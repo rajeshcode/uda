@@ -86,27 +86,35 @@ def products_by(brand)
   $toys_data["items"].select { |toy| toy["brand"] == brand }
 end
 
-totbrandsales=0
 brands.each do |brand|
     puts brand
     30.times {print  "*****"}
     print "\n"
     brand_price=0
     avg_price=0
+    brandstock=0
+    result1=0
+    totbrandsales=0
     products_by(brand).each do |product|
           #puts product["full-price"]
           brand_price = brand_price + product["full-price"].to_f
-          product["purchases"].each do |value|
-             totbrandsales = totbrandsales + value["price"]
+          brandstock = brandstock + product["stock"].to_f
+         
+          #product["purchases"].each do |value|
+          #   totbrandsales = totbrandsales + value["price"]
+          #end 
+          #totbrandsales = product["purchases"].inject(0) { |result, el| result + el["price"] }
+          #result1=product["purchases"].inject(0) { |result1, el| result1 + el["price"] }
+          result1=product["purchases"].inject(0) do |result1, el| 
+            result1 + el["price"] 
           end
-          #puts totbrandsales
+          totbrandsales=totbrandsales + result1
     end
-          print "Number of Products: "
-          puts products_by(brand).length
+          print "Brand toys in Stock: "
+          puts brandstock
 
           print "Average Product Price: "
           avg_price=brand_price/products_by(brand).length
-          #puts avg_price.round(2)
           puts "$" + avg_price.round(2).to_s  # This method is to print $ symbold and variable value as string 
           print "Total Sales: "
           puts "$#{totbrandsales.round(2)}"
