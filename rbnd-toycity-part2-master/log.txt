@@ -1,0 +1,23 @@
+commit 3cbd0b82ce84397d16e89b5ee61ad56483c7c56c
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sat Jan 9 19:07:28 2016 +0530
+
+     addition using reduce and map
+
+commit a2be61aa7518cd1ee94637486cfd4c0a600a9472
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Fri Jan 8 20:22:47 2016 +0530
+
+     Updated with correction and inject method use
+
+commit a1228c2c7fbf5b76a48f111b63708768fb24c7dc
+Author: Rajesh <rajesh_ymail@yahoo.com>
+Date:   Fri Jan 8 00:02:58 2016 +0530
+
+    deleted duplicate file
+
+commit 4f76191682d73e54190fd6c97e9d0262b0b2dada
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Thu Jan 7 23:51:11 2016 +0530
+
+    Ruby JSON parser
