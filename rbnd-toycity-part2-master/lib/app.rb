@@ -9,7 +9,7 @@ end
 
 
 def print_report(out)
-    open("report.txt", "a") { |f|
+    open($report_file, "a") { |f|
     f<<out
    }
 end
