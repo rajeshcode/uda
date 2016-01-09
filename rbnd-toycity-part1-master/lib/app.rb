@@ -45,7 +45,9 @@ $toys_data["items"].each do |toy|
   toy["purchases"].each do |pp|
     tsales = tsales + pp["price"]
   end
+  #ttal_sales = toy['purchases'].map{|purchase| purchase['price']}.reduce(:+)  # Another method using map and reduce
   puts "$#{tsales}"
+  #puts ttal_sales
 
   print "Average Price:"
   avprice=tsales/(toy["purchases"].count)
