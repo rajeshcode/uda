@@ -1,3 +1,21 @@
+commit 21771cc651a3743acd6463f1c1975c337ac8488b
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sun Jan 10 23:56:05 2016 +0530
+
+     Updated toycity-part2 with  formated methods
+
+commit 3e63924b0015b3d210a715f5768618d259e9b8af
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sun Jan 10 00:03:57 2016 +0530
+
+     updated part2 toycity
+
+commit c4f67f7320b33e23030c26e500756ed2e4659706
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sat Jan 9 23:56:53 2016 +0530
+
+    log.txt for toycity-part2
+
 commit 2046bdf6569990c2b9060a945a74e5bb757e927c
 Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
 Date:   Sat Jan 9 23:55:30 2016 +0530
