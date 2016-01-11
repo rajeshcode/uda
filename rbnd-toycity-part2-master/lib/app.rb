@@ -8,9 +8,7 @@ def setup_files
 end
 
 def print_report(out)
-    open($report_file, "a") { |f|
-    f<<out
-   }
+    open($report_file, "a") { |f| f<<out }
 end
 
 
@@ -59,12 +57,10 @@ def product_ascii
        print_report("|_|                                        \n")
 end
 
-def product_calci(argu, options={})
+def product_calci(purchaselist, options={})
       # options has arguments
-      #coutofprod=options[:ttpurcount]
-      #options[:toyactprice]
   
-      ttal_sales = argu.map{|purchase| purchase['price']}.reduce(:+)
+      ttal_sales = purchaselist.map{|purchase| purchase['price']}.reduce(:+)
       print_report("Total Sales:")
       print_report("$#{ttal_sales}\n")
   
@@ -73,7 +69,7 @@ def product_calci(argu, options={})
       print_report("Average Price:")
       print_report("$" + avprice.to_s + "\n")
   
-      result= (100-(avprice / options[:toyactprice1])*100) #.round(2)
+      result= (100 - (avprice / options[:toyactprice1]) * 100) #.round(2)
       print_report("Average Discount:")
       print_report(result.round(2).to_s + "%" +"\n")
 
@@ -137,59 +133,59 @@ def products_by(brand)
 end
 
 def brand_reports(brandstock = 100 ,options={})
-          print_report("Brand toys in Stock: ")
-          print_report("#{brandstock}\n")
-          
-          print_report("Average Product Price: ")
-          avg_price=options[:brand_price]/options[:noofbrands]
-          print_report("$" + avg_price.round(2).to_s + "\n") 
-          
-          print_report("Total Sales: ")
-          print_report("$#{options[:totbrandsales].round(2)}\n")
+  print_report("Brand toys in Stock: ")
+  print_report("#{brandstock}\n")
+      
+  print_report("Average Product Price: ")
+  avg_price=options[:brand_price]/options[:noofbrands]
+  print_report("$" + avg_price.round(2).to_s + "\n") 
+         
+  print_report("Total Sales: ")
+  print_report("$#{options[:totbrandsales].round(2)}\n")
 end
 
-def bybrand
-        brand_ascii
+def brand_calculator(brand)
+  brand_price=0 
+  brandstock=0
+  totbrandsales=0
+  avg_price=0
+  products_by(brand).each do |product|
+    brand_price += product["full-price"].to_f
+    brandstock += product["stock"]
+    result1=product["purchases"].inject(0) do |result1, el| result1 + el["price"] end
+    totbrandsales=totbrandsales + result1
+  end
+  noofbrands=products_by(brand).length
+  brand_reports(brandstock,brand_price:brand_price, noofbrands:noofbrands, totbrandsales:totbrandsales)
+end
 
-        #Calling each Brand for printing data
-        brands.each do |brand|
-              print_report("#{brand}\n")
-              print_stars
-              brand_price=0
-              avg_price=0
-              brandstock=0
-              totbrandsales=0
-    
-              products_by(brand).each do |product|
-                  #puts product["full-price"]
-                  brand_price = brand_price + product["full-price"].to_f
-                  brandstock = brandstock + product["stock"].to_f
-    
-                  result1=product["purchases"].inject(0) do |result1, el|
-                          result1 + el["price"]
-                  end
-                  totbrandsales=totbrandsales + result1
-              end
-              noofbrands=products_by(brand).length
-              brand_reports(brandstock,brand_price:brand_price, noofbrands:noofbrands, totbrandsales:totbrandsales)
-    
-              print_report("\n")
-       end
+
+def bybrand
+  brand_ascii
+
+  #Calling each Brand for printing data
+  brands.each do |brand|
+    print_report("#{brand}\n")
+    print_stars
+  
+    brand_calculator(brand) 
+    print_report("\n")
+  end
 end
 
 
 def start
-    setup_files
-    preparation
-    # Print today's date
-    time = Time.new
-    mytime=time.strftime("%Y-%m-%d %H:%M:%S")
-    print_report("#{mytime}\n")
-    print_stars
-    products
-    bybrand
-    puts " SALES REPORT GENERATED for #{mytime} "
-    puts " PLEASE READ SALESREPORT IN report.txt"
+  setup_files
+  preparation
+  # Print today's date
+  time = Time.new
+  mytime=time.strftime("%Y-%m-%d %H:%M:%S")
+  print_report("#{mytime}\n")
+  print_stars
+  products
+  bybrand
+  puts " SALES REPORT GENERATED for #{mytime} "
+  puts " PLEASE READ SALESREPORT IN report.txt"
 end
 
 start
