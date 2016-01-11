@@ -58,48 +58,48 @@ def product_ascii
 end
 
 def product_calci(purchaselist, options={})
-      # options has arguments
+  # options has arguments
   
-      ttal_sales = purchaselist.map{|purchase| purchase['price']}.reduce(:+)
-      print_report("Total Sales:")
-      print_report("$#{ttal_sales}\n")
+  ttal_sales = purchaselist.map{|purchase| purchase['price']}.reduce(:+)
+  print_report("Total Sales:")
+  print_report("$#{ttal_sales}\n")
   
-      avprice=(ttal_sales / options[:ttpurcount1])
-      # print "Average Price:"
-      print_report("Average Price:")
-      print_report("$" + avprice.to_s + "\n")
+  avprice=(ttal_sales / options[:ttpurcount1])
+  # print "Average Price:"
+  print_report("Average Price:")
+  print_report("$" + avprice.to_s + "\n")
   
-      result= (100 - (avprice / options[:toyactprice1]) * 100) #.round(2)
-      print_report("Average Discount:")
-      print_report(result.round(2).to_s + "%" +"\n")
+  result= (100 - (avprice / options[:toyactprice1]) * 100) #.round(2)
+  print_report("Average Discount:")
+  print_report(result.round(2).to_s + "%" +"\n")
 
 
 end
 
+# Traverse products to generate sales reports 
 def products
        
-       product_ascii 
-      
-       $products_hash["items"].each do |toy|
-          avprice=0
-          # Print the name of the toy
-          print_report("\n" + toy["title"]+"\n")
-          print_stars
+  product_ascii 
+  $products_hash["items"].each do |toy|
+    avprice=0
+    # Print the name of the toy
+    print_report("\n" + toy["title"]+"\n")
+    print_stars
      
-          print_report("Retail Price:")
-          toyactprice=toy["full-price"].to_f
-          print_report("$#{toyactprice}\n")
-   
-          print_report("Total Purchases:")
-          ttpurcount=toy["purchases"].count
-          print_report("#{ttpurcount}\n")
+    print_report("Retail Price:")
+    toyactprice=toy["full-price"].to_f
+    print_report("$#{toyactprice}\n")
+  
+    print_report("Total Purchases:")
+    ttpurcount=toy["purchases"].count
+    print_report("#{ttpurcount}\n")
           
-          # A method to generate calculated info about product
-          product_calci(toy['purchases'], {ttpurcount1:ttpurcount , toyactprice1:toyactprice  } ) 
+    # A method to generate calculated info about product
+    product_calci(toy['purchases'], {ttpurcount1:ttpurcount , toyactprice1:toyactprice  } ) 
    
-          print_stars
-          print "\n"
-       end
+    print_stars
+    print "\n"
+  end
 end
 
 
@@ -124,12 +124,12 @@ def brand_ascii
 end
 
 def brands
-    @brands ||= $products_hash["items"].map { |toy| toy["brand"] }.uniq
-    #$products_hash["items"].map { |toy| toy["brand"] }.uniq
+  @brands ||= $products_hash["items"].map { |toy| toy["brand"] }.uniq
+  #$products_hash["items"].map { |toy| toy["brand"] }.uniq
 end
 
 def products_by(brand)
-    $products_hash["items"].select { |toy| toy["brand"] == brand }
+  $products_hash["items"].select { |toy| toy["brand"] == brand }
 end
 
 def brand_reports(brandstock = 100 ,options={})
@@ -155,12 +155,12 @@ def brand_calculator(brand)
     result1=product["purchases"].inject(0) do |result1, el| result1 + el["price"] end
     totbrandsales=totbrandsales + result1
   end
-  noofbrands=products_by(brand).length
-  brand_reports(brandstock,brand_price:brand_price, noofbrands:noofbrands, totbrandsales:totbrandsales)
+  no_of_brands=products_by(brand).length
+  brand_reports(brandstock,brand_price:brand_price, noofbrands:no_of_brands, totbrandsales:totbrandsales)
 end
 
-
-def bybrand
+#start to find Brands  and data
+def process_brands_data
   brand_ascii
 
   #Calling each Brand for printing data
@@ -183,7 +183,7 @@ def start
   print_report("#{mytime}\n")
   print_stars
   products
-  bybrand
+  process_brands_data
   puts " SALES REPORT GENERATED for #{mytime} "
   puts " PLEASE READ SALESREPORT IN report.txt"
 end
