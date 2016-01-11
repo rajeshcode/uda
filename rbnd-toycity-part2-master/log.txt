@@ -45,3 +45,68 @@ Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
 Date:   Thu Jan 7 23:51:11 2016 +0530
 
     Ruby JSON parser
+commit d71dc29bb4ba651d2d445977e6ae04d0e571123b
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Mon Jan 11 22:53:47 2016 +0530
+
+     Udated variables and methods with required snake case
+
+commit bd156e53045319d97a7eb0c05f865b24c21b7622
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Mon Jan 11 20:55:15 2016 +0530
+
+     shortened bybrand method
+
+commit de6a7d7c8c12d54d46d07017a7c66c6411cf234a
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sun Jan 10 23:57:42 2016 +0530
+
+     Updated log.txt  after review correction
+
+commit 21771cc651a3743acd6463f1c1975c337ac8488b
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sun Jan 10 23:56:05 2016 +0530
+
+     Updated toycity-part2 with  formated methods
+
+commit 3e63924b0015b3d210a715f5768618d259e9b8af
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sun Jan 10 00:03:57 2016 +0530
+
+     updated part2 toycity
+
+commit c4f67f7320b33e23030c26e500756ed2e4659706
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sat Jan 9 23:56:53 2016 +0530
+
+    log.txt for toycity-part2
+
+commit 2046bdf6569990c2b9060a945a74e5bb757e927c
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sat Jan 9 23:55:30 2016 +0530
+
+     Updated toycity-part2
+
+commit 3cbd0b82ce84397d16e89b5ee61ad56483c7c56c
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Sat Jan 9 19:07:28 2016 +0530
+
+     addition using reduce and map
+
+commit a2be61aa7518cd1ee94637486cfd4c0a600a9472
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Fri Jan 8 20:22:47 2016 +0530
+
+     Updated with correction and inject method use
+
+commit a1228c2c7fbf5b76a48f111b63708768fb24c7dc
+Author: Rajesh <rajesh_ymail@yahoo.com>
+Date:   Fri Jan 8 00:02:58 2016 +0530
+
+    deleted duplicate file
+
+commit 4f76191682d73e54190fd6c97e9d0262b0b2dada
+Author: Rajesh Chandramohan <rajesh_ymail@yahoo.com>
+Date:   Thu Jan 7 23:51:11 2016 +0530
+
+    Ruby JSON parser
